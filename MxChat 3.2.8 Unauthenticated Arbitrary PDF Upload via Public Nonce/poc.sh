@@ -49,3 +49,14 @@ curl -I "$URL"
 
 echo
 echo "[+] If HTTP/1.1 200 OK appears above, VULN CONFIRMED."
+
+echo 
+
+echo
+echo -e "\033[1;31m"
+echo "[!] After reporting this vulnerability to WPScan, we further verified the impact and confirmed that the upload functionality accepts extremely large PDF files without authentication."
+echo
+echo "[!] During testing, we successfully uploaded PDF files up to 2 GB in size."
+echo
+echo "[!] This demonstrates that an unauthenticated attacker can repeatedly upload very large files, potentially leading to disk space exhaustion and denial of service conditions on the affected server."
+echo -e "\033[0m"
