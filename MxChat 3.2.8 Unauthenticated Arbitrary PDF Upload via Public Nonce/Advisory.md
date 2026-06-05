@@ -8,7 +8,7 @@ An attacker can repeatedly upload large PDF files without authentication, leadin
 
 **Severity:** High
 
-**CVSS v3.1:** 8.2 (Suggested)
+**CVSS v3.1:** 8.1 (Suggested)
 **Vector:** CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H
 
 ## Affected Product
